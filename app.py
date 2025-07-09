@@ -8,6 +8,10 @@ co = cohere.Client("1MKARbZfa1UhWBbJJs6q3WuGpdjS2E42q9HpsQrz")
 @app.route('/')
 def index():
     return render_template('index.html')
+@app.route('/chat', methods=['POST'])
+def chat():
+    data = request.json
+    # call to OpenAI here
 
 # Chat API
 @app.route('/ask', methods=['POST'])
